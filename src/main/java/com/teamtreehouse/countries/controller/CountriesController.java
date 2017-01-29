@@ -18,8 +18,8 @@ public class CountriesController {
 	
 	@RequestMapping("/")
 	public String countryList(ModelMap modelMap){
-//		List<Country> listCountries=countryRepository.getListCountries();
-//		modelMap.put("countries",listCountries);
+		List<Country> listCountries=countryRepository.getListCountries();
+		modelMap.put("countries",listCountries);
 		return "index";
 	}
 }

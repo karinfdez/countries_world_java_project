@@ -10,13 +10,13 @@
 <body>
 	<header>
 		<div class="container">
-			<h1><a href="index.html">Countries of the World</a></h1>
+			<h1><a href="/">Countries of the World</a></h1>
 		</div>
 	</header>
 	<div class="container">
 		<div th:each="country : ${countries}" class="country">
-			<a th:href="@{'/flags/'+${flags.name}}">
-				<img th:src="@{'/flags/'+${flag.countryImageName}+'.png'}" alt="Flag of ${country.countryName}"/>
+			<a th:href="@{'/flags/'+${country.countryName}}">
+				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" alt="Flag of ${country.countryName}"/>
 				<h4 th:text="${country.countryName}">India</h4>
 			</a>
 		</div>
