@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="app.css" />
-
+	 <link rel="stylesheet" type="text/css" th:href="@{/app.css}" />
+	 
 	<title>Countries of the World</title>
 </head>
 <body>
@@ -15,11 +15,12 @@
 	</header>
 	<div class="container">
 		<div th:each="country : ${countries}" class="country">
-			<a th:href="@{'/flags/'+${country.countryName}}">
-				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" alt="Flag of ${country.countryName}"/>
+			    <a th:href="@{'/flags/'+${country.countryImageName}}">
+				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" th:alt="${country.countryName}"/>
 				<h4 th:text="${country.countryName}">India</h4>
 			</a>
 		</div>
 	</div>
 </body>
 </html>
+

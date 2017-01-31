@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.teamtreehouse.countries.data.CountryRepository;
@@ -21,5 +22,12 @@ public class CountriesController {
 		List<Country> listCountries=countryRepository.getListCountries();
 		modelMap.put("countries",listCountries);
 		return "index";
+	}
+	
+	@RequestMapping("/flags/{countryName}")
+	public String findByCountry(@PathVariable String countryName,ModelMap modelMap){
+		Country listByName=countryRepository.findByName(countryName);
+		modelMap.put("country",listByName);
+		return "country";
 	}
 }

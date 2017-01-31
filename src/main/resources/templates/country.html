@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	 <link rel="stylesheet" type="text/css" th:href="@{/app.css}" />
+
+	<title>India</title>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1><a href="/">Countries of the World</a></h1>
+		</div>
+	</header>
+	<div class="container">
+		<div class="country-details">
+			<h2 th:text="${country.countryName}">India</h2>
+			<div class="meta">
+				<div class="stat">
+					<h4>Population</h4>
+					<span th:text="${country.population}">1,276,267,000</span>
+				</div>
+				<div class="stat">
+					<h4>Capital</h4>
+					<span th:text="${country.capitalCity}">New Delhi</span>
+				</div>
+				<div class="stat">
+					<h4>Official Languages</h4>
+					<ul th:each="language : ${country.officialLanguages}">
+						<li th:text="${language}">Spanish</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flag">
+				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}"  alt="Flag of India"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

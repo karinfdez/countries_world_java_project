@@ -1,22 +1,21 @@
 package com.teamtreehouse.countries.model;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class Country {
 	private String countryName;
-	private double population;
+	private String population;
 	private String capitalCity;
 	private String countryImageName;
 	private List<String> officialLanguages;
 	
-	public Country(String countryName, double population, String capitalCity,
-			String countryImageName) {
+	public Country(String countryName, String population, String capitalCity, List<String> languages,String countryImageName) {
 		super();
 		this.countryName = countryName;
 		this.population = population;
 		this.capitalCity = capitalCity;
-		this.officialLanguages=new ArrayList<>();
+		this.officialLanguages=languages;
 		this.countryImageName = countryImageName;
 	}
 	
@@ -29,10 +28,10 @@ public class Country {
 	public void setCountryName(String countryName) {
 		this.countryName = countryName;
 	}
-	public double getPopulation() {
+	public String getPopulation() {
 		return population;
 	}
-	public void setPopulation(float population) {
+	public void setPopulation(String population) {
 		this.population = population;
 	}
 	public String getCapitalCity() {
