@@ -3,8 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	 <link rel="stylesheet" type="text/css" th:href="@{/app.css}" />
-	 
+	<link rel="stylesheet" th:href="@{/css/app.css}" />
 	<title>Countries of the World</title>
 </head>
 <body>
@@ -16,11 +15,10 @@
 	<div class="container">
 		<div th:each="country : ${countries}" class="country">
 			    <a th:href="@{'/flags/'+${country.countryImageName}}">
-				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" th:alt="${country.countryName}"/>
+			    <img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" th:alt="@{${country.countryImageName}+'.png'}"/>
 				<h4 th:text="${country.countryName}">India</h4>
 			</a>
 		</div>
 	</div>
 </body>
 </html>
-

@@ -31,9 +31,7 @@ public class Country {
 	public String getPopulation() {
 		return population;
 	}
-	public void setPopulation(String population) {
-		this.population = population;
-	}
+	
 	public String getCapitalCity() {
 		return capitalCity;
 	}

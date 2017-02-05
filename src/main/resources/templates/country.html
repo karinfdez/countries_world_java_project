@@ -3,9 +3,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	 <link rel="stylesheet" type="text/css" th:href="@{/app.css}" />
+	<link rel="stylesheet" th:href="@{/css/app.css}" />
 
-	<title>India</title>
+	<title>Countries</title>
 </head>
 <body>
 	<header>
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="flag">
-				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}"  alt="Flag of India"/>
+				<img th:src="@{'/flags/'+${country.countryImageName}+'.png'}"   th:alt="@{${country.countryImageName}+'.png'}"/>
 			</div>
 		</div>
 	</div>
