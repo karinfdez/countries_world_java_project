@@ -14,7 +14,7 @@
 	</header>
 	<div class="container">
 		<div th:each="country : ${countries}" class="country">
-			    <a th:href="@{'/flags/'+${country.countryImageName}}">
+			    <a th:href="@{'/country/'+${country.countryImageName}}">
 			    <img th:src="@{'/flags/'+${country.countryImageName}+'.png'}" th:alt="@{${country.countryImageName}+'.png'}"/>
 				<h4 th:text="${country.countryName}">India</h4>
 			</a>
