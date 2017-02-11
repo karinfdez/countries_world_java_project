@@ -24,7 +24,7 @@ public class CountriesController {
 		return "index";
 	}
 	
-	@RequestMapping("/flags/{countryName}")
+	@RequestMapping("/country/{countryName}")
 	public String findByCountry(@PathVariable String countryName,ModelMap modelMap){
 		Country listByName=countryRepository.findByName(countryName);
 		modelMap.put("country",listByName);
